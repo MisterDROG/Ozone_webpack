@@ -1,9 +1,11 @@
-const searchFilter = (data, value) => {
+export const searchFilter = (data, value) => {
     return data.filter((item) => {
-        console.log(item);
-        return item.title.includes(value)
+        return item.title.toLowerCase().includes(value.toLowerCase())
     })
-
 }
 
-export default searchFilter 
+export const searchCatalog = (data, value) => {
+    return data.filter((item) => {
+        return item.category === value;
+    })
+}

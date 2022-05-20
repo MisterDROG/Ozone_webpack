@@ -1,5 +1,3 @@
-import getDataPH from "./getData";
-
 const renderGoods = (data) => {
     const goodsContainer = document.querySelector('.goods');
 

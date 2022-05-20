@@ -8,15 +8,9 @@ const renderPage = () => {
             renderGoods(data);
             })
 
-    
-
     // cartBtn.addEventListener('click', () => {
     //     postDataPH().then((data) => {
     //         console.log(data);
-
-    //         getDataPH().then((data) => {
-    //             console.log(data);
-    //         });
     //     })
     // })
 }
