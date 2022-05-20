@@ -1,12 +1,16 @@
 import getDataPH from "./getData";
 import postDataPH from "./postData";
+import renderGoods from './renderGoods'
 
-const cart = () => {
-    const cartBtn = document.querySelector('#cart')
+const renderPage = () => {
+
     getDataPH().then((data) => {
-        console.log(data);
-    });
+            data.forEach((element) => {
+                renderGoods(element);
+            })
+            })
 
+    
 
     // cartBtn.addEventListener('click', () => {
     //     postDataPH().then((data) => {
@@ -19,4 +23,4 @@ const cart = () => {
     // })
 }
 
-export default cart
+export default renderPage
