@@ -3,10 +3,12 @@ const renderGoods = (data) => {
 
     goodsContainer.innerHTML = '';
 
+    localStorage.setItem('goods', JSON.stringify(data))
+
     data.forEach((item) => {
         goodsContainer.insertAdjacentHTML('beforeend', `
             <div class="col-12 col-md-6 col-lg-4 col-xl-3">
-                <div class="card">
+                <div class="card" data-key="${item.id}">
                     ${(item.sale) ? '<div class="card-sale">🔥Hot Sale🔥</div>': ''}
                     <div class="card-img-wrapper">
                         <span class="card-img-top"

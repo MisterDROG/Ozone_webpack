@@ -1,19 +1,11 @@
-const postDataPH = () => {
-    return fetch('https://test-e79a5-default-rtdb.firebaseio.com/goods.json', {
+const postDataPH = (cart) => {
+    return fetch('https://jsonplaceholder.typicode.com/posts', {
         method: 'POST',
-        body: JSON.stringify({
-          title: "Игра Ведьмак 3",
-          price: 2000,
-          sale: true,
-          img: "https://cdn1.ozone.ru/multimedia/c400/1027495663.jpg",
-          hoverImg: "https://cdn1.ozone.ru/multimedia/c400/1028469540.jpg",
-          category: "Игра"
-        }),
+        body: JSON.stringify(cart),
         headers: {
           'Content-type': 'application/json; charset=UTF-8',
         },
       })
-      .then((response) => response.json())
-    }
-
+    .then((response) => response.json())
+  }
 export default postDataPH

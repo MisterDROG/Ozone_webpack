@@ -8,18 +8,12 @@ const catalog = () => {
 
     const catalogCat = document.querySelectorAll('.catalog-list li')
 
-    catalogCat.forEach((elem) => {
-        elem.addEventListener('click', () => {
-            console.log(elem.textContent)
-            getDataPH().then((data) => {
-                renderGoods(searchCatalog(data, elem.textContent));
-            })
-        })
-    })
-
 
     let swithcer = false;
     btnCatalog.addEventListener('click', () => {
+        getDataPH().then((data) => {
+            renderGoods(data);
+        })
         if (swithcer) {
             catalogModal.style.display = 'none';
             swithcer = false;
@@ -28,6 +22,16 @@ const catalog = () => {
             catalogModal.style.display = 'block';
             swithcer = true;
         }
+    })
+
+    catalogCat.forEach((elem) => {
+        elem.addEventListener('click', () => {
+            catalogModal.style.display = 'none';
+            swithcer = false;
+            getDataPH().then((data) => {
+                renderGoods(searchCatalog(data, elem.textContent));
+            })
+        })
     })
 
 }
