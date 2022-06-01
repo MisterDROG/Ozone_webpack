@@ -14,4 +14,6 @@ Created with webpack and modular structure. Product data is taken from the Fireb
 
 (In gitignore files for webpack: /node_modules and package-lock.json)
 
+https://misterdrog.github.io/Ozone_webpack/
+
 Developed by Igor Drogaytsev.
